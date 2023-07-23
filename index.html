@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
 
   <title>Frontend Mentor | News homepage</title>
 
@@ -22,25 +23,33 @@
   <main>
     <header>
       <div class="left"><img src="/assets/images/logo.svg" alt="logo"></div>
-      <div class="right">
-        <div class="box">Home</div>
-        <div class="box">New</div>
-        <div class="box">Popular</div>
-        <div class="box">Trending</div>
-        <div class="box">Categories</div>
+      <label for="menu" class="check-box">
+        <img src="/assets/images/icon-menu.svg" alt="menu icon" onclick="showMenu()">
+      </label>
+      <div id="menu" class="right">
+        <ul>
+          <label for="menu" class="check-box">
+            <img src="/assets/images/icon-menu-close.svg" alt="menu close icon" onclick="hideMenu()">
+          </label>
+          <li><a href="#" class="box">Home</a></li>
+          <li><a href="#" class="box">New</a></li>
+          <li><a href="#" class="box">Popular</a></li>
+          <li><a href="#" class="box">Trending</a></li>
+          <li><a href="#" class="box">Categories</a></li>
+        </ul>
       </div>
     </header>
     <div class="pictures">
-      <img class="pic-1" src="/assets/images/image-web-3-desktop.jpg" alt="">
-      <div class="pic-2">The Bright Future of Web 3.0?</div>
-      <div class="pic-3">
+      <img class="pics pic-1" src="/assets/images/image-web-3-desktop.jpg" alt="">
+      <div class="pics pic-2">The Bright Future of Web 3.0?</div>
+      <div class="pics pic-3">
         <p>
           We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
             But is it really fulfilling its promise?
         </p>
         <button>READ MORE</button>
       </div>
-      <div class="pic-4">
+      <div class="pics pic-4">
         <h1>New</h1>
         <div class="box">
           <h2>Hydrogen VS Electric Cars</h2>

@@ -7,6 +7,7 @@
 body{
     padding: 70px 100px;
     min-height: 120vh;
+    max-width: 100%;
 }
 
 header{
@@ -16,18 +17,34 @@ header{
     align-items: center;
     margin-bottom: 30px;
 }
-header .right{
+header label, header ul label{
+    display: none;
+}
+header li{
+    list-style: none;
+}
+header .right a{
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+header .right ul{
     display: flex;
     flex-direction: row;
 }
 header .right .box{
     padding: 0px 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+header .right .box:hover{
+    text-decoration: underline;
 }
 
 .pictures{
     display: grid;
     gap: 20px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr minmax(100px,auto);
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 70px;
 }
@@ -48,6 +65,9 @@ header .right .box{
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     line-height: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .pictures .pic-3 button{
     letter-spacing: 0.25rem;
@@ -56,12 +76,17 @@ header .right .box{
     color: hsl(36, 100%, 99%);
     background-color: hsl(5, 85%, 63%);
     border: none;
+    cursor: pointer;
+    max-width: 70%;
+}
+.pictures .pic-3 button:hover{
+    background-color: hsl(5, 94%, 54%);
 }
 .pictures .pic-4{
     grid-row: 1 / 3;
     grid-column: 3 / 4;
     background-color: black;
-    padding: 30px 20px 0 20px;
+    padding: 30px 20px 30px 20px;
     color: hsl(36, 100%, 99%);
 }
 .pictures .pic-4 .box{
@@ -117,4 +142,68 @@ header .right .box{
 .bottom .box p{
     font-size: 0.9rem;
     color: hsl(233, 8%, 79%);
+}
+
+@media(max-width:700px){
+    body{
+        padding: 70px 20px;
+        max-width: 100%;
+    }
+    header .right{
+        flex-direction: column;
+        background-color: hsl(5, 85%, 63%);
+        height: 100vh;
+        position: absolute;
+        top:70px;
+        right: -300px;
+        width:200px;
+        transition: 0.5s;
+    }
+    header .right ul{
+        display: flex;
+        flex-direction: column;
+    }
+    header .right label{
+        display: flex;
+        justify-self: flex-start;
+        padding: 30px 40px;
+    }
+    header .right ul img{
+        max-width: 40%;
+    }
+    header .right li{
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        margin: 10px auto 30px 20px;
+    }
+    header .right a{
+        text-decoration: none;
+        color: white;
+    }
+    header label, header ul label{
+        display: flex;
+    }
+    .pictures{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 70px;
+    }   
+    .pictures .pics{
+        margin-bottom: 30px;
+    }
+    .pictures .pic-2{
+        margin-bottom: 0;
+    }
+    .pictures .pic-3 button{
+        min-height: 60px;
+        max-width: 50%;
+    }
+    .bottom{
+        flex-direction: column;
+    }
+    .bottom .box{
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
 }
